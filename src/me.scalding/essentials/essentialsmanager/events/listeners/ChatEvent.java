@@ -4,10 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-/**
- * Created by Jake on 8/1/2016.
- */
-public class ChatEvent extends SubEvent {
+class ChatEvent extends SubEvent {
 
     public void onEvent(Event event) {
         if(!isEvent(event, eventName())) {
@@ -15,6 +12,9 @@ public class ChatEvent extends SubEvent {
             return;
         }
         AsyncPlayerChatEvent e = (AsyncPlayerChatEvent) event;
+        if(muted.contains(e.getPlayer().getUniqueId())) {
+            e.setCancelled(true);
+        }
     }
 
     public String eventName() { return "AsyncPlayerChatEvent"; }
