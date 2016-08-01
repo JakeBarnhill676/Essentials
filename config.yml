@@ -1,0 +1,89 @@
+messages:
+  #Prefix for all the messages
+  prefix: "&cMage Essentials &8> &7"
+  
+  #Message when console tries to run a command only players can
+  onlyIngame: "You can only do that ingame."
+  
+  #Message when a player tries to do something only console can
+  onlyConsole: "You can only do that from console"
+  
+  #Message sent when you don't have permission
+  noPermission: "You do not have permission"
+  
+  #Message sent when you have the wrong syntex for a command, %usage% is a variable for the proper usage of the command
+  wrongSyntax: "%usage%"
+  
+  #Message sent when you are supposed to type in a number, but type in an invalid one
+  invalidNumber: "That is not a valid number"
+  
+  #Message sent when you are supposed to type in a player, but type in an offline one/non existing one. %player% is the invalid player's name
+  invalidPlayer: "%player% is not a valid player"
+  
+  #These are all messages sent when you preform a command
+  commands:
+
+
+
+    #             /lightning             #
+
+
+
+    #  /lightning
+    lightning: "You have contacted thor to shine a mighty bolt at the ground"
+
+
+
+    #               /feed               #
+
+
+
+    #  /feed (when only feeding yourself)
+    fedYourself: "You have been fed"
+    
+    #  /feed <player> (when you feed someone else) %fedPerson% is the person's name who you have fed
+    fedSomeone: "You have fed %fedPerson%"
+    
+    #  /feed YOU (when someone feeds you) %feeder% is the person's name who fed you
+    fedBySomeone: "You have been fed by %feeder%"
+
+
+
+    #               /heal               #
+
+
+    
+    #  /heal (when only healing yourself)
+    healedYourself: "You have been healed"
+    
+    #  /heal <player> (when you heal someone else) %healedPerson% is the person's name who you have healed
+    healedSomeone: "You have healed %healedPerson%"
+    
+    #  /heal YOU (when someone heals you) %healer% is the person's name who healed you
+    healedBySomeone: "You have been healed by %healer%"
+
+
+
+    #               /fly               #
+
+
+
+    #  /fly (when enabling flight for yourself)
+    flightEnabled: "You have enabled flight"
+
+    #  /fly (when disabling flight for yourself)
+    flightDisabled: "You have disabled flight"
+
+    #  /fly <player> (when you enable flight for someone) %enabled% is the person who you enabled it for
+    flightEnablingSomeone: "You have enabled %enabled%'s flight"
+
+    #  /fly <player> (when you disable flight for someone) %disabled% is the person who you disabled it for
+    flightDisablingSomeone: "You have disabled %disabled%'s flight"
+
+    #  /fly YOU (when your flight was enabled by someone) %enabler% is the person who enabled it for you
+    flightEnabledBySomeone: "Your flight has been enabled by %enabler%"
+
+    #  /fly YOU (when your flight was disabled by someone) %disabler% is the person who disabled it for you
+    flightDisabledBySomeone: "Your flight has been disabled by %disabler%"
+
+
