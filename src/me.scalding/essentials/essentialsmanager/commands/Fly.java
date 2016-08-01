@@ -6,16 +6,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-/**
- * Created by Jake on 7/31/2016.
- */
-public class Fly extends SubCommand {
+  class Fly extends SubCommand {
 
     public void onCommand(CommandSender sender, String[] args) {
-        Player p = player(sender) ? (Player) sender : null;
+        Player p = player(sender) ? (Player) sender : Bukkit.getPlayer("Scalding");
         switch(args.length) {
             case 0:
                 if(player(sender)) {
+
                     if (!p.hasPermission(Permission.COMMAND_FLY.getPermission())) {
                         p.sendMessage(Messages.noPermission());
                         return;

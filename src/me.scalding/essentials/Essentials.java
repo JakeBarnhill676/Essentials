@@ -1,6 +1,8 @@
 package essentials;
 
 import essentials.essentialsmanager.commands.BaseCommand;
+import essentials.essentialsmanager.events.listeners.BaseEvent;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -17,6 +19,7 @@ public final class Essentials extends JavaPlugin{
         for(Map.Entry<String, Map<String, Object>> map : getDescription().getCommands().entrySet()) {
             getCommand(map.getKey()).setExecutor(new BaseCommand());
         }
+        Bukkit.getPluginManager().registerEvents(new BaseEvent(), this);
     }
 
     @Override

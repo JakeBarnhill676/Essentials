@@ -9,12 +9,9 @@ import org.bukkit.plugin.RegisteredListener;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Jake on 8/1/2016.
- */
 public class BaseEvent implements Listener {
 
-    public List<SubEvent> events = new ArrayList();
+    private List<SubEvent> events = new ArrayList<>();
 
 
 
@@ -27,11 +24,7 @@ public class BaseEvent implements Listener {
     }
 
 
-    public void onEvent(org.bukkit.event.Event e) {
-        for(SubEvent event : events) {
-            if(e.getEventName().equalsIgnoreCase(event.eventName())) {
-                event.onEvent(e);
-            }
-        }
+    private void onEvent(org.bukkit.event.Event e) {
+        events.stream().filter(event -> e.getEventName().equalsIgnoreCase(event.eventName())).forEachOrdered(event -> event.onEvent(e));
     }
 }

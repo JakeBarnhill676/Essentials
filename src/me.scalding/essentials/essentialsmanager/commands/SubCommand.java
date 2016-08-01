@@ -7,18 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by Jake on 7/30/2016.
- */
-public abstract class SubCommand {
+abstract class SubCommand {
 
     public abstract void onCommand(CommandSender sender, String[] args);
 
     public abstract String commandName();
 
-    public boolean player(CommandSender sender) {
+    boolean player(CommandSender sender) {
         return sender instanceof Player;
     }
 
-    public static List<UUID> flightToggled = new ArrayList();
+    static List<UUID> flightToggled = new ArrayList<>();
 }

@@ -2,17 +2,20 @@ package essentials.essentialsmanager.events.listeners;
 
 import org.bukkit.event.Event;
 
-/**
- * Created by Jake on 8/1/2016.
- */
-public abstract class SubEvent {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
-    public abstract void onEvent(Event event);
+abstract class SubEvent {
+
+    abstract void onEvent(Event event);
 
     public abstract String eventName();
 
-    public boolean isEvent(Event testedEvent, String wantedEvent) {
+    boolean isEvent(Event testedEvent, String wantedEvent) {
         return testedEvent.getEventName().equalsIgnoreCase(wantedEvent);
     }
+
+    List<UUID> muted = new ArrayList<>();
 
 }

@@ -1,8 +1,5 @@
 package essentials.essentialsmanager.utils;
 
-/**
- * Created by Jake on 7/30/2016.
- */
 public enum Permission {
 
     COMMAND_LIGHTING("lightning"),
