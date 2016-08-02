@@ -83,7 +83,5 @@ public class Lightning extends SubCommand {
         sender.sendMessage(Messages.onlyUseIngame());
     }
 
-    public String commandName() { return "lightning"; }
-
 
 }

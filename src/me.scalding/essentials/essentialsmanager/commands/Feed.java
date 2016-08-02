@@ -67,7 +67,5 @@ public class Feed extends SubCommand {
         }
     }
 
-    public String commandName() { return "feed"; }
-
 
 }

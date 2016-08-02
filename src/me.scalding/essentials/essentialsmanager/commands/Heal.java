@@ -73,8 +73,6 @@ public class Heal extends SubCommand {
         }
     }
 
-    public String commandName() { return "heal"; }
-
 
 }
 

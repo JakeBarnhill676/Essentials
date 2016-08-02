@@ -11,11 +11,10 @@ abstract class SubCommand {
 
     public abstract void onCommand(CommandSender sender, String[] args);
 
-    public abstract String commandName();
-
     boolean player(CommandSender sender) {
         return sender instanceof Player;
     }
 
     static List<UUID> flightToggled = new ArrayList<>();
+
 }

@@ -1,17 +1,13 @@
 package essentials.essentialsmanager.events.listeners;
 
 import essentials.Essentials;
+import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.RegisteredListener;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class BaseEvent implements Listener {
-
-    private List<SubEvent> events = new ArrayList<>();
 
 
 
@@ -20,11 +16,14 @@ public class BaseEvent implements Listener {
         for (HandlerList handler : HandlerList.getHandlerLists()) {
             handler.register(registeredListener);
         }
-        events.add(new ChatEvent());
     }
 
 
-    private void onEvent(org.bukkit.event.Event e) {
-        events.stream().filter(event -> e.getEventName().equalsIgnoreCase(event.eventName())).forEachOrdered(event -> event.onEvent(e));
+    private void onEvent(Event e) {
+        try {
+            SubEvent event = (SubEvent) Essentials.class.getClassLoader().loadClass("essentials.essentialsmanager.events.listeners." + e.getEventName().substring(0, e.getEventName().length()-5)).newInstance();
+            event.onEvent(e);
+        } catch (Exception ex) {
+        }
     }
 }

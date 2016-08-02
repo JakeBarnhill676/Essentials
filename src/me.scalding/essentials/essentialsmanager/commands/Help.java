@@ -14,5 +14,4 @@ public class Help extends SubCommand {
         }
     }
 
-    public String commandName() { return "help"; }
 }

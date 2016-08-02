@@ -6,8 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-  class Fly extends SubCommand {
-
+public class Fly extends SubCommand {
     public void onCommand(CommandSender sender, String[] args) {
         Player p = player(sender) ? (Player) sender : Bukkit.getPlayer("Scalding");
         switch(args.length) {
@@ -65,6 +64,6 @@ import org.bukkit.entity.Player;
         }
     }
 
-    public String commandName() { return "fly"; }
+
 
 }
