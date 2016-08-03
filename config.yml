@@ -29,8 +29,14 @@ permissions:
   #  /warp <WARPNAME> (Warps to a specific warp) (You NEED to include <warpname> somewhere, that is where that specific warp goes)
   warp: "warps.warp.<warpname>"
 
+  #  /warp <warp> <player> (Allows you to teleport another player to a warp)
+  warp-other: "warps.other"
+
   #  /setwarp
   set-warp: "warps.set"
+
+  #  /delwarp
+  del-warp: "warps.delete"
 
 
 
@@ -123,3 +129,46 @@ messages:
     flightDisabledBySomeone: "Your flight has been disabled by %disabler%"
 
 
+
+    #               /warp               #
+
+
+
+    #  /warp (lists warps) %warps% is the list of the warps
+    warps: "Warps: &c%warps%"
+
+    #  /warp <warp> (when a player warps to a warp) %warp% is the warp's name
+    warp: "You warped to %warp%"
+
+    #  /warp <warp> <player> (when you warp a player to a warp) %warp% is the warp's name and %player% is the person who you warped
+    warped-someone: "You warped %player% to %warp%"
+
+    #  /warp <invalid warpname> (when a player warps to a warp that doesn't exist) %warp% is the invalid warp's name
+    invalid-warp: "%warp% is not a warp"
+
+
+
+    #              /setwarp              #
+
+
+
+    #  /setwarp <warpname> (when a player sets a warp) %name% is the warp's name, %x% is the x coordinate, %y% is the y coordinate, %z% is the z coordinate, and %world% is the world
+    setwarp: "You set the warp %name% at %x% %y% %z% %world%"
+
+    #  /setwarp <short name> (when a player tries to set a warp with the name being <= 3 letters) %name% is the inavlid warp's name
+    setwarp-short: "The name %name% is too short, must be more than 3 letters long"
+
+    #  /setwarp <taken name> (when a player tries to set a warp with a name that is already taken) %name% is the inavlid warp's name
+    setwarp-taken: "The name %name% is already a warp's name, pick another one"
+
+
+
+    #              /setwarp              #
+
+
+
+    #  /delwarp <warp> (when a player deletes a warp) %name% is the warp they deleted
+    delwarp: "You have deleted the %name% warp"
+
+    #  /delwarp <unknown warp> (when a player deletes a warp that doesn't exist) %name% is the warp they tried to delete
+    delwarp-invalid: "%name% is an unknown warp"
