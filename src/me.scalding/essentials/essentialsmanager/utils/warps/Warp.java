@@ -28,25 +28,25 @@ public class Warp {
         this.loc = loc;
         this.name = name;
         this.setter = setter;
+        this.id = manager.newId();
     }
 
 
     public boolean exists() {
-        return new File(Essentials.getInstance().getDataFolder() + File.separator + "Warps", name + "." + Integer.toString(id)).exists();
+        return new File(Essentials.getInstance().getDataFolder() + File.separator + "Warps", name + "." + Integer.toString(id) + ".yml").exists();
     }
 
-    public boolean create() {
+    public boolean create() throws IOException {
         if(exists()) return false;
         try {
-            File file = new File(Essentials.getInstance().getDataFolder() + File.separator + "Warps", name + "." + Integer.toString(id));
+            File file = new File(Essentials.getInstance().getDataFolder() + File.separator + "Warps", name + "." + Integer.toString(id) + ".yml");
             file.createNewFile();
             FileConfiguration config = YamlConfiguration.loadConfiguration(file);
             config.set("location", loc);
             config.set("setter", setter.toString());
             config.set("name", name);
-            if(!manager.containsId(id)) {
-                Essentials.getInstance().warps.add(this);
-            }
+            config.save(file);
+                Essentials.warps.add(this);
             return true;
         }catch(IOException e) {
             e.printStackTrace();
@@ -80,5 +80,9 @@ public class Warp {
 
     public int getId() {
         return id;
+    }
+
+    public File getFile() {
+        return new File(Essentials.getInstance().getDataFolder() + File.separator + "Warps", name + "." + Integer.toString(id) + ".yml");
     }
 }
