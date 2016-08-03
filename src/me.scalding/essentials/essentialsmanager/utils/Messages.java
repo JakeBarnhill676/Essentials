@@ -2,6 +2,7 @@ package essentials.essentialsmanager.utils;
 
 import essentials.Essentials;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.util.stream.Collectors;
@@ -62,4 +63,22 @@ public class Messages {
     public static String commandFlightDisablingSomeone(String disabled) { return getMessage("commands.flightDisablingSomeone").replace("%disabled%", disabled); }
 
     public static String commandFlightEnablingSomeone(String enabled) { return getMessage("commands.flightEnablingSomeone").replace("%enabled%", enabled); }
+
+    public static String commandSetWarpTaken(String name) { return getMessage("commands.setwarp-taken").replace("%name%", name); }
+
+    public static String commandSetWarpShort(String name) { return getMessage("commands.setwarp-short").replace("%name%", name);}
+
+    public static String commandSetWarp(String name, Location loc) { return getMessage("commands.setwarp").replace("%name%", name).replace("%x%",Double.toString(loc.getX())).replace("%y%",Double.toString(loc.getY())).replace("%z%",Double.toString(loc.getZ())).replace("%world%", loc.getWorld().getName()); }
+
+    public static String commandWarpInvalid(String name) { return getMessage("commands.invalid-warp").replace("%name%", name); }
+
+    public static String commandWarp(String name) {return getMessage("commands.warp").replace("%warp%", name); }
+
+    public static String commandWarpOther(String warp, String player) {return getMessage("commands.warped-someone").replace("%player%", player).replace("%warp%", warp); }
+
+    public static String commandWarpList(String warps) { return getMessage("commands.warps").replace("%warps%", warps);}
+
+    public static String commandDelWarp(String name) { return getMessage("commands.delwarp").replace("%name%", name); }
+
+    public static String commandDelWarpInvalid(String name) { return getMessage("commands.delwarp-invalid").replace("%name%", name); }
 }

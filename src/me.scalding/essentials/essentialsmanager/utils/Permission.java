@@ -18,11 +18,15 @@ public enum Permission {
 
     COMMAND_HEAL_OTHER(p("heal-other")),
 
-    WARP_LIST(p("warp-list")),
+    COMMAND_WARP_LIST(p("warp-list")),
 
-    WARP(p("warp")),
+    COMMAND_WARP(p("warp")),
 
-    SETWARP(p("set-warp"));
+    COMMAND_WARP_OTHER(p("warp-other")),
+
+    COMMAND_SETWARP(p("set-warp")),
+
+    COMMAND_DELWARP(p("delete-warp"));
 
     private String permission;
 
