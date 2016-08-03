@@ -17,7 +17,16 @@ commands:
     aliases: [thor, strike]
   help:
     description: Searches through all the lands for all the commands on your server.
-    usage: /help <page>
+    usage: /help
   fly:
     description: Contacts the airplanes to give the ability of flight.
     usage: /fly <player>
+  warp:
+    description: Flies you through the sky to a specific location.
+    usage: /warp <warp>
+  setwarp:
+    description: Creates a warp.
+    usage: /setwarp <warp>
+  delwarp:
+    description: Deletes a warp.
+    usage: /delwarp <warp>
