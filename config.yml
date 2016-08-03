@@ -1,3 +1,39 @@
+permissions:
+  #Base permission node for all commands
+  base-permission-commands: "mage.use"
+
+  #  /lightning
+  lightning: "lightning"
+
+  #  /fly (Toggling fly for yourself)
+  fly: "fly"
+
+  #  /fly <other> (Toggling fly for someone else)
+  fly-other: "fly.other"
+
+  #  /feed (Feeding yourself)
+  feed: "feed"
+
+  #  /feed <other> (Feeding someone else)
+  feed-other: "feed.other"
+
+  #  /heal (Healing yourself)
+  heal: "heal"
+
+  #  /heal <other> (Healing someone else)
+  heal-other: "heal.other"
+
+  #  /warp (Lists warps)
+  warp-list: "warps.list"
+
+  #  /warp <WARPNAME> (Warps to a specific warp) (You NEED to include <warpname> somewhere, that is where that specific warp goes)
+  warp: "warps.warp.<warpname>"
+
+  #  /setwarp
+  set-warp: "warps.set"
+
+
+
 messages:
   #Prefix for all the messages
   prefix: "&cMage Essentials &8> &7"
